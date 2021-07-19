@@ -3,9 +3,12 @@
 //
 //     Given:
 //
-// var fruits = ["apple", "banana", "orange", "apple", "pineapple"];
+var fruits = ["apple", "banana", "orange", "apple", "pineapple"];
 // allIndexesOf(fruits, "apple") should return the array [0, 3]
 // allIndexesOf(fruits, "guava") should return the array []
 // allIndexesOf(fruits, "pineapple") should return [4]
 
-function allInde
+function allIndexesOf(input1,input2){
+
+
+}

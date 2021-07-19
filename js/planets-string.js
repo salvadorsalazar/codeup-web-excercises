@@ -27,5 +27,5 @@
    // var planetsBreak ="Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune"
     var newPlanetsString = planetsArray.join('\n');
     console.log(newPlanetsString);
-
+    ar planetsHTML = '<ul><li>' + planetsArray('</i><li>')+'</li></ul>';
 })();
