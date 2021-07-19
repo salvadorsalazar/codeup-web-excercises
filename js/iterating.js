@@ -69,11 +69,11 @@ names.forEach(function(names){
     }console.log(second(names));
 
     function last(input){
-        return input[3];
-
+       // return input[3];
+        return input[input.length-1];
 
     }console.log(last(names));
-
+    console.log(first(nums),1);
 
 
 
