@@ -9,6 +9,17 @@ var fruits = ["apple", "banana", "orange", "apple", "pineapple"];
 // allIndexesOf(fruits, "pineapple") should return [4]
 
 function allIndexesOf(input1,input2){
-return input1+ fruits.indexOf();
+return input1.concat(input2.indexof());
 
 }
+
+
+// Define a function named removeAll(array, value) that takes in two arguments. The first argument should be an array and the second argument should be a value you wish to remove
+//
+// Given:
+//
+var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+
+// removeAll(bugs, "ant") should return ["mosquito", "scorpion", "mosquito", "typo", "reference error", "type error"]
+// removeAll(bugs, "mosquito") should return ["ant", "scorpion", "ant", "ant", "typo", "reference error", "type error"]
+// removeAll(bugs, "roach") should return the original array b/c "roach" has no occurrances.
