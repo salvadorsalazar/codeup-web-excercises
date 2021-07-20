@@ -92,7 +92,42 @@ discount();
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    var books=['Enders Game','The Hobbit','Ready Player One','World War Z','The Hobbit']
+    var books=[
+        { title:'Enders Game',
+              author:{
+                  firstName:'Orson',
+                  lastName:'Scott Card'}
+        },
+
+        { title:'The Hobbit',
+            author:{
+            firstName:'JRR',
+            lastName:'Tolkein'}
+        },
+
+        {   title:'Ready Player One',
+            author: {
+            firstName:'Ernest',
+            lastName: 'Cline'}
+         },
+         {   title:'World War Z',
+            author:{
+            firstName:'Max',
+                lastName:'Brooks'}
+         },
+
+         {  title:'The Martian Chronicles',
+            author:{
+            firstName:'Ray',
+            lastName:'Bradbury'}
+         }
+
+         ]
+
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+     console.log(books[0].author.lastName);
+
 
     /**
      * TODO:
