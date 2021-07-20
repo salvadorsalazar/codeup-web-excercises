@@ -57,6 +57,9 @@
      * and console.log the relevant messages for each person
      */
 
+
+    /*
+
     var shoppers = [
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
@@ -64,9 +67,9 @@
     ];
 
     function discount() {
-        shoppers.forEach(function (shopper) {
+        shoppers.forEach(function (shopper){
             if (shopper.amount > 200) {
-                console.log(shopper.name + ' spent $' + shopper.amount.toFixed(2));
+                console.log(shopper.name + ' spent $' + shopper.amount.toFixed  (2));
                 console.log(shopper.name+'s '+ 'Amount after discount : $' + (shopper.amount -        shopper.amount * .12).toFixed(2));
             }
 
@@ -77,6 +80,8 @@
         });
     }
 discount();
+
+    */
 
 
     /** TODO:
@@ -91,6 +96,8 @@ discount();
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+
 
     var books=[
         { title:'Enders Game',
@@ -124,12 +131,14 @@ discount();
 
          ]
 
-    console.log(books[0].title);
-    console.log(books[0].author.firstName);
-     console.log(books[0].author.lastName);
+    // console.log(books[4].title);
+    // console.log(books[4].author.firstName);
+    //  console.log(books[4].author.lastName);
 
 
-    /**
+
+
+    /*
      * TODO:
      * Loop through the books array and output the following information about
      * each book:
@@ -153,6 +162,31 @@ discount();
      *      ---
      *      ...
      */
+
+books.forEach(function(input,input2){
+
+    console.log('Book # '+ (input2));
+    console.log('Title : '+ input.title);
+    console.log('Author: '+ input.author.firstName + ' '+ input.author.lastName);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Bonus:
