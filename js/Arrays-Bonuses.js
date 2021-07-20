@@ -9,6 +9,6 @@ var fruits = ["apple", "banana", "orange", "apple", "pineapple"];
 // allIndexesOf(fruits, "pineapple") should return [4]
 
 function allIndexesOf(input1,input2){
-
+return input1+ fruits.indexOf();
 
 }
