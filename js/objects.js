@@ -165,27 +165,10 @@ discount();
 
 books.forEach(function(input,input2){
 
-    console.log('Book # '+ (input2));
+    console.log('Book # '+ (input2+1));
     console.log('Title : '+ input.title);
     console.log('Author: '+ input.author.firstName + ' '+ input.author.lastName);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     /**
@@ -199,4 +182,33 @@ books.forEach(function(input,input2){
      *   `showBookInfo` function.
      */
 
+
+
+
+    function createBook (title, firstName, lastName) {
+        return {
+            title: title,
+            author: {
+                firstName: firstName,
+                lastName: lastName }
+        };
+    }
+
+    function showBookInfo(bookObject, bookNumber){
+        console.log("Book # " + (bookNumber + 1));
+        console.log("Title: " + bookObject.title);
+        console.log("Author: " + bookObject.author.firstName + " " + bookObject.author.lastName);
+        console.log("---");
+    }
+
+    books.push(createBook("Traction", "Gino", "Whitman"));
+
+    books.forEach(function(book, count){
+        showBookInfo(book, count);
+    })
+
+
+
 })();
+
+
