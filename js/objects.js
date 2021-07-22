@@ -14,14 +14,14 @@
 
 
 
-
+    //
     // var person ={
     //     firstName:'Salvador',
     //     lastName:'Salazar'
     // };
     // console.log(person.firstName);
     // console.log(person.lastName);
-    //
+
 
 
 
@@ -34,18 +34,17 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-
-
+    //
+    //
     // person.sayHello = function(){
     //     return 'Hello from ' + person.firstName +' '+person.lastName;
     // }
     // console.log(person.sayHello());
-
+    //
 
 
     /** TODO:
-     * HEB has an offer for the shoppers that buy products amounting to
-     * more than $200. If a shopper spends more than $200, they get a 12%
+     * HEB has an offer for the shoppers that buy products amounting to* more than $200. If a shopper spends more than $200, they get a 12%
      * discount. Write a JS program, using conditionals, that logs to the
      * browser, how much Ryan, Cameron and George need to pay. We know that
      * Cameron bought $180, Ryan $250 and George $320. Your program will have to
@@ -58,7 +57,6 @@
      */
 
 
-    /*
 
     var shoppers = [
         {name: 'Cameron', amount: 180},
@@ -66,22 +64,47 @@
         {name: 'George', amount: 320}
     ];
 
-    function discount() {
-        shoppers.forEach(function (shopper){
-            if (shopper.amount > 200) {
-                console.log(shopper.name + ' spent $' + shopper.amount.toFixed  (2));
-                console.log(shopper.name+'s '+ 'Amount after discount : $' + (shopper.amount -        shopper.amount * .12).toFixed(2));
-            }
+    //justin waljthorugh with for statement
+    // for (var i = 0; i < shoppers.length; i += 1) {
+    //     var discountedAmount = calculateDiscount(shoppers[i].amount, discountThreshold, discountPercentage);
+    //     var output = shoppers[i].name + ' is purchasing ' + shoppers[i].amount +
+    //         ' of stuff. He will get ' + discountedAmount +
+    //         ' off the purchase and pay ' +
+    //         (shoppers[i].amount - discountedAmount) + '.';
+    //     console.log(output);
+    // }
 
-            if(shopper.amount < 200){
-                console.log(shopper.name + " spent : $" + shopper.amount.toFixed(2));
-                console.log("You need to spend more than $200 to get a 12% discount .");
-            }
-        });
-    }
-discount();
 
-    */
+
+
+
+    //
+    // shoppers.forEach(function(shopper){
+    //     var discountedAmount = calculateDiscount(shopper.amount, discountThreshold, discountPercentage);
+    //        var output = shopper.name + ' is purchasing ' + shopper.amount +
+    //            ' of stuff. He will get ' + discountedAmount +
+    //            ' off the purchase and pay ' +
+    //            (shopper.amount - discountedAmount) + '.';
+    //        console.log(output);
+    //
+    // });
+
+
+//     function discount() {
+//         shoppers.forEach(function (shopper){
+//             if (shopper.amount > 200) {
+//                 console.log(shopper.name + ' spent $' + shopper.amount.toFixed                  (2));
+//                 console.log(shopper.name+'s '+ 'Amount after discount : $' +                        (shopper.amount -shopper.amount * .12).toFixed(2));
+//             }
+//
+//             if(shopper.amount < 200){
+//                 console.log(shopper.name + " spent : $" + shopper.amount.toFixed(2));
+//                 console.log("You need to spend more than $200 to get a 12% discount .");
+//             }
+//         });
+//     }
+// discount();
+
 
 
     /** TODO:
@@ -163,12 +186,12 @@ discount();
      *      ...
      */
 
-// books.forEach(function(input,input2){
-//
-//     console.log('Book # '+ (input2+1));
-//     console.log('Title : '+ input.title);
-//     console.log('Author: '+ input.author.firstName + ' '+ input.author.lastName);
-// });
+books.forEach(function(input,input2){
+
+    console.log('Book # '+ (input2+1));
+    console.log('Title : '+ input.title);
+    console.log('Author: '+ input.author.firstName + ' '+ input.author.lastName);
+});
 
 
     /**
@@ -183,15 +206,15 @@ discount();
      */
 
 
-    //
-    // function createBook (title, firstName, lastName) {
-    //     return {
-    //         title: title,
-    //         author: {
-    //             firstName: firstName,
-    //             lastName: lastName }
-    //     };
-    // }
+
+    function createBook (title, firstName, lastName) {
+        return {
+            title: title,
+            author: {
+                firstName: firstName,
+                lastName: lastName }
+        };
+    }
 
     function showBookInfo(bookObject, bookNumber){
         console.log("Book # " + (bookNumber + 1));
@@ -199,12 +222,12 @@ discount();
         console.log("Author: " + bookObject.author.firstName + " " + bookObject.author.lastName);
         console.log("---");
     }
-    //
-    // books.push(createBook("Traction", "Gino", "Whitman"));
-    //
-    // books.forEach(function(book, count){
-    //     showBookInfo(book, count);
-    // })
+
+    books.push(createBook("created book", "madeup", "madeuplastname"));
+
+    books.forEach(function(book, count){
+        showBookInfo(book, count);
+    })
 
 
 })();
