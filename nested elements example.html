@@ -1,10 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Nested Elements</title>
 </head>
 <body>
-$END$
+
+
+
+<div>
+  <p>
+    Draco cohort is <i>the</i> best!
+  </p>
+</div>
+
+
+
+<div>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Shirt Color</th>
+    </tr>
+    <tr>
+      <td>Serguio</td>
+      <td>Burgandy</td>
+    </tr>
+    <tr>
+      <td>Paris</td>
+      <td>Blue</td>
+    </tr>
+    <tr>
+      <td>Salvador</td>
+      <td>Midnight Blue</td>
+    </tr>
+    <tr>
+      <td>Sebastian</td>
+      <td>Black</td>
+    </tr>
+  </table>
+
+
+
+
 </body>
 </html>
+
+
+
+<p>Table</p>
+<table border="1">
+  <tr><th>Header 1</th><th>Header 2</th></tr>
+  <tr><td>row 1, cell 1</td><td>row 1, cell 2</td></tr>
+  <tr><td>row 2, cell 1</td><td>row 2, cell 2</td></tr>
+</table>
+
+
+
+<p>Nested Table</p>
+<table border="1">
+  <tr><th>Header 1</th><th>Header 2</th></tr>
+  <tr><td>row 1, cell 1</td><td>row 1, cell 2</td></tr>
+  <tr><td>row 2, cell 1</td>
+    <td>row 2, cell 2
+      <table border="1">
+        <tr><th>Header 1A</th><th>Header 1B</th></tr>
+        <tr><td>row 1, cell 1</td><td>row 1, cell 2</td></tr>
+        <tr><td>row 2, cell 1</td><td>row 2, cell 2</td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+<!--
+The No. 1 reason that you should care about nesting is if you're going to use CSS.
+
+Cascading Style Sheets rely on tags to be consistently nested within the document so that it can tell where styles begin and end.
+
+Incorrect nesting makes it hard for the browser to know where to apply these styles. Let's look at some HTML:
+
+
+<table border="1">
+  <tr><th>First header</th><th>Second header</th></tr>
+  <tr><td>row 1, cell 1</td><td>row 1, cell 2</td></tr>
+  <tr><td>row 2, cell 1</td><td>row 2, cell 2</td></tr>
+</table>
+
+Nested tables
+In HTML, you can create nested tables, that is, tables that are located inside other tables. To make a nested table, you need to put the code of the table that you want to nest inside any <td> tag.
+
+  For example, take the table we have already created and put this code in the second cell of the second row:
+
+
+  <table border="1">
+    <tr><th>First header</th><th>Second header</th></tr>
+    <tr><td>row 1, cell 1</td><td>row 1, cell 2</td></tr>
+    <tr><td>row 2, cell 1</td>
+      <td>row 2, cell 2
+        <table border="1">
+          <tr><th>First header</th><th>Second header</th></tr>
+          <tr><td>row 1, cell 1</td><td>row 1, cell 2</td></tr>
+          <tr><td>row 2, cell 1</td><td>row 2, cell 2</td></tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  Try it »
+  As a result, we have a table inside the cell of another table, that is, a table inside the table.
+
+-->
