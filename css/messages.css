@@ -6,4 +6,33 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 
+.message{
+    border:solid lightgray 5px;
+    margin : .5em;
+    padding : .5em;
+    border-radius: .5em;
+}
+
+.message-info{
+background-color: rgb(196,217,255);
+color:rgb(75,71,159	);
+}
+
+.message-success{
+    background-color: rgb(198,242,213);
+    color:rgb(45,130,83);
+}
+
+.message-warning{
+    background-color: rgb(252,251,194);
+    color:rgb(160,143,55);
+}
+
+.message-error{
+    background-color: rgb(252,204,210);
+    color:rgb(142,42,67);
+
+
+
+}
 
