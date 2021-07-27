@@ -8,10 +8,8 @@ body, html {
 
 .message{
     border:solid lightgray 2px;
-
     margin : .5em;
     padding : .5em;
-
     border-radius: .5em;
 }
 
