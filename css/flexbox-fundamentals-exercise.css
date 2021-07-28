@@ -36,6 +36,7 @@ h2, h3 {
 
     /* enter needed declarations here */
     display: flex;
+
     flex-direction: column;
     justify-content: space-evenly;
 }
@@ -50,9 +51,17 @@ section:nth-of-type(1) {
     height: 3em;
     background: lightgreen;
     /* enter needed declarations here */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 section:nth-of-type(1) div:last-child {
     /* enter needed declarations here */
+    display: flex;
+    align-self: flex-start;
+
+
 }
 
 .purple-box {
@@ -63,10 +72,15 @@ section:nth-of-type(1) div:last-child {
 
 .purple-box:nth-of-type(1) {
     /* enter needed declarations here */
+    display:flex;
+flex-grow:3 ;
 }
 
 .purple-box:nth-of-type(2) {
     /* enter needed declarations here */
+
+    display:flex;
+    flex-grow:1 ;
 }
 
 .blue-box {
@@ -77,10 +91,14 @@ section:nth-of-type(1) div:last-child {
 
 section:nth-of-type(3) {
     /* enter needed declarations here */
+    display: flex;
+    align-self: center;
 }
 
 section:nth-of-type(3) h3 {
     /* enter needed declarations here */
+display: flex;
+  align-self: flex-end;
 
 }
 
