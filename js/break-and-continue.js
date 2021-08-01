@@ -16,7 +16,7 @@
            document.write('Yikes , Skipping number : ' + i);
            // console.log('Yikes! Skipping number: ' + i )
             continue;
-        } document.write("\n");
+        } document.write("<br>");
         document.write('Here is an odd number: ' + i +'\n');
 
         //console.log('Here is an odd number: ' + i )
