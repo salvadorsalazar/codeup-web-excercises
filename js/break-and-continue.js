@@ -1,21 +1,24 @@
-(function toBreakOrContinue() {
-    var isItOdd = prompt("Please enter an odd number between 1 and 50: ");
-    isItOdd = Number(isItOdd);
+(function breakContinue() {
+    var oddNumber = prompt("Please enter an odd number between 1 and 50: ");
+    oddNumber = Number(oddNumber);
     do {
-        if(isItOdd <= 50 && isItOdd > 0 && isItOdd % 2 !== 0 && isNaN(parseFloat(isItOdd)) === false) {
+        if(oddNumber <= 50 && oddNumber > 0 && oddNumber % 2 !== 0
+            && isNaN(parseFloat(oddNumber)) === false) {
             break;
         } else {
-            isItOdd = prompt('Invalid input.  Please enter an ODD NUMBER between 1 and 50: ')
+            oddNumber = prompt('Invalid input.  Please enter an ODD NUMBER between 1 and 50: ')
         }
-    } while (isItOdd > 50 || isItOdd <= 0 || isItOdd % 2 === 0 || isNaN(parseFloat(isItOdd)) === true);
+    } while (oddNumber > 50 || oddNumber <= 0 || oddNumber % 2 === 0 || isNaN(parseFloat(oddNumber)) === true);
 
     for (var i = 1; i < 50; i += 2) {
 
-        if(i === isItOdd) {
-            console.log('Yikes! Skipping number: ' + i )
+        if(i === oddNumber) {
+           document.write('Yikes , Skipping number : ' + i);
+           // console.log('Yikes! Skipping number: ' + i )
             continue;
-        }
+        } document.write("\n");
+        document.write('Here is an odd number: ' + i +'\n');
 
-        console.log('Here is an odd number: ' + i )
+        //console.log('Here is an odd number: ' + i )
     }
 })();
