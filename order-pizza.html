@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Oder-Pizza</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet "href="css/custom.css">
 </head>
 <body>
 
@@ -25,31 +26,62 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Menu</a>
             </li>
-
-
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-
+                <input class="form-control mr-sm-2" type="earch" placeholder="Zip Code"                      aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0"                                        type="submit">Search</button>
+           </form>
         </ul>
-<!--        <ul>-->
-
             <a class="nav-link" href="#">Sign Up</a>
     </div>
 </nav>
 
 
-<div class="container">
-    <!-- Content here -->
-    <img src="images/pizza.png" class="img-fluid" >
-    <div class="jumbotron jumbotron-fluid">
-        <h1 class="display-4">Welcome to Pizza World!</h1>
+
+<main class="container">
+    <header class="jumbotron jumbotron-fluid" >
+        <h1 class="display-4  ">Welcome to Pizza World!</h1>
+    </header>
 
 
+<!--<h2>Build your own pizza!</h2>-->
+<!--<ul class="navbar-nav mr-auto">-->
+<!--    <li class="nav-item ">-->
+<!--        <a class="nav-link" href="#">Size and crust</a>-->
+<!--    </li>-->
+<!--    <li class="nav-item">-->
+<!--        <a class="nav-link" href="#">CHeese and Sauce</a>-->
+<!--    </li>-->
+<!--    <li class="nav-item">-->
+<!--        <a class="nav-link" href="#">Toppings</a>-->
+<!--    </li>-->
+<!--</ul>-->
+
+
+<h2 class="mb-3">Build your own pizza!</h2>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#size" role="tab" aria-controls="home" aria-selected="true">Size and Crust</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#cheese" role="tab" aria-controls="profile" aria-selected="false">Cheese and Sauce</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#toppings" role="tab" aria-controls="contact" aria-selected="false">Toppings</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+            <!--        Tab Pane 1-->
+        <div class="tab-pane fade show active" id="size" role="tabpanel" aria-labelledby="home-tab">size and crust card</div>
+            <!--        Tab pane 2-->
+        <div class="tab-pane fade" id="cheese" role="tabpanel" aria-labelledby="profile-tab">cheese and sauce card</div>
+            <!--        Tab pane 3-->
+        <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="contact-tab">toppings card</div>
     </div>
-    </div>
-</div>
+
+
+</main>
 
 
 
