@@ -25,18 +25,36 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button id="btn1">Javascript is Cool</button>
+<button id="btn2">Turn SubHeader Blue</button>
+<button id="btn3">Turn to Grey</button>
+<button id="btn4">Turn "dbid-1" Blue</button>
+<button id="btn5">Mission accomplished</button>
+
+
+
 <script>
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        //   var mainHeader = document.getElementById('main-header');
-        var mainHeader =document.querySelector('#main-header');
+          var mainHeader = document.getElementById('main-header');
+        // var mainHeader =document.querySelector('#main-header');
         console.log(mainHeader.innerHTML);
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        // var mainHeader = document.querySelector('#main-header').innerHtml = 'Javascript is Cool';
-        mainHeader.innerHTML='Javascript is Cool';
-        console.log(mainHeader.innerHTML);
+        //Original exercise:
+        // mainHeader.innerHTML='Javascript is Cool';
+        // console.log(mainHeader.innerHTML);
+
+        // Event Listener 1
+
+        var button1 = function firstButton() {
+            // var mainHeader = document.getElementById('main-header');
+            mainHeader.innerHTML = "JavaScript is Cool!"
+        };
+        document.getElementById('btn1').addEventListener('click', button1);
+
+
 
         // TODO: Uncomment the next line and get the sub header element by id
          var subHeader = document.querySelector('#sub-header');
@@ -44,7 +62,16 @@
 
 
         // TODO: Set the text color of subHeader to blue
-         subHeader.style.color='blue';
+        //added button event listener 2
+        var button2 = function secondButton(){
+            subHeader.style.color='blue';
+
+        } ;
+        document.getElementById('btn2').addEventListener('click',button2);
+
+        //Original exercise:
+        // subHeader.style.color='blue';
+
 
         // TODO: Uncomment the next line and get all list items
         //  var listItems =document.querySelector('li') ;
@@ -53,13 +80,31 @@
         console.log(listItems);
 
         // TODO: Set text color on every other list item to grey
-        for (var i =0;i < listItems.length; i += 2 ){
-            listItems[i].style.color = 'grey'
-        }
+
+        //event listener 3
+        var button3 = function(){
+
+            for (var i =0;i < listItems.length; i += 2 ){
+                listItems[i].style.color = 'grey'
+            }
+        };
+        document.getElementById('btn3').addEventListener('click',button3);
+
+        //Original exercise:
+        // for (var i =0;i < listItems.length; i += 2 ){
+        //     listItems[i].style.color = 'grey'
+        // }
 
         // TODO: Set text color of li with dbid = 1 to blue
-        // var dbidColor = document.querySelector('dbid')
-         listItems[0].style.color = 'blue';
+
+        //Event Listener 4:
+        var button4 = function(){
+            listItems[0].style.color = 'blue';
+        }
+        document.getElementById('btn4').addEventListener('click',button4);
+
+        //Original Exercise:
+        // listItems[0].style.color = 'blue';
 
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
@@ -67,10 +112,19 @@
         console.log(subParagraphs);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs.innerText = "Mission Accomplished!";
+        //Event listener 5
+        var button5 = function(){
+            subParagraphs.innerText = "Mission Accomplished!";
+        }
+        document.getElementById('btn5').addEventListener('click',button5);
+
+        //Original exercise:
+        // subParagraphs.innerText = "Mission Accomplished!";
 
 
     })();
 </script>
 </body>
 </html>
+
+
