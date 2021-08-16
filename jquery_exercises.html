@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery_exercises</title>
+
+
+    <style>
+        /*.simple-box {*/
+        /*    height: 100px;*/
+        /*    width: 75%;*/
+        /*    margin: 15px auto;*/
+        /*    border: 1px solid black;*/
+        /*}*/
+        /*.outline{*/
+        /*    outline:8 px ridge rebeccapurple;*/
+        /*    outline-offset: 3px;*/
+        /*}*/
+
+
+        /*.p{*/
+
+        /*    font-size: 18px;*/
+        /*}*/
+
+    </style>
+
+
+</head>
+<body>
+<!--<script src = "js/my-custom-javascript.js"></script>-->
+
+
+<h1 id="h1Element">H1 header test for jquery manipulation</h1><button id="changeColor">Change h1 color</button>
+<p >text in a paragraph</p>
+
+<ul>unordered list example</ul>
+    <li>list 1</li>
+    <li>list 2</li>
+
+    <div id="someDiv">
+            <h2 id="'headerID">h2 header inside a div tag</h2>
+            <p id="'ParaID">paragrarph inside a div tag ....blah...lbha...lbah...blahparagrarph inside a div tag ....blah...lbha...lbah...blahparagrarph inside a div tag ....blah...lbha...lbah...blahparagrarph inside a div tag ....blah...lbha...lbah...blah</p>
+
+    </div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+
+<script>
+
+    $(document).ready(function() {
+
+        "use strict";
+        // alert( 'The DOM has finished loading!' );
+
+        $('#h1Element').click(function() {
+            // alert('h1 clicked');
+
+             $(this).css('background-color','lime');
+        });
+
+
+        $('p').dblclick(function(){
+            // $(this).css('background-color','lime');
+
+            $(this).css('font-size','18px');
+
+        })
+
+$('li').hover(function(){
+    $(this).css('color','red');
+},
+    function() {
+        $(this).css('color', 'black');
+
+    });
+
+
+    });
+
+</script>
+</body>
+
+
+</html>
