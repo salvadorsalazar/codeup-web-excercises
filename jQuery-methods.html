@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style>
+
+        .highlight{
+            background-color: cornsilk;
+
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Essential jQuery methods</h1>
+<h2 id="'leader"> i a m the leader</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus culpa delectus dolorem doloremque eaque eius eveniet id impedit incidunt inventore ipsam mollitia nesciunt nulla omnis quidem quos, sit voluptatibus. Aliquid?</p>
+
+
+<h2 id="follower">I an the followe</h2>
+
+<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, molestiae, quia! Aliquam consectetur corporis delectus dicta dolorum earum eligendi incidunt minima nesciunt quae recusandae rem repudiandae sed vel, velit voluptatem.</p>
+
+<button id="font-changer">change the font</button>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+
+<script>
+    //Dont forge the parantesie afte the method
+    //othere wiese the metod doesnt work
+    // var htmlMethod=$('#leader').html;
+    // alert(htmlMethod);
+
+    //
+    // var follewerContent = $('#follower').html();
+    // alert(follewerContent);
+
+$('#font-changer').click(function(){
+    var currentFontFamily = $('body').css('font-family');
+    // alert(currentFontFamily);
+
+if(currentFontFamily === 'serif' || currentFontFamily ==='Times'){
+
+    $('body').css('font-family','sans-serif');
+
+}else{
+    $('body').css('font-family','serif');
+
+    }
+});
+
+// $('h2').mouseenter(function(){
+//
+//     $(this).addClass('highlight');
+//
+// });
+//--------------------------
+
+
+    // $('h2').hover(function(){
+    //     $(this).toggleClass('highlight')
+    //
+    // });
+
+    //samae as above just a little more flexible
+$('h2').hover(function(event){
+
+    $(event.target).toggleClass('highlight')
+});
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>

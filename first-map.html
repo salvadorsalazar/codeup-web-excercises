@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Map</title>
+
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+
+<style>
+    #map{
+        width:800px;
+        height : 800px;
+    }
+</style>
+
+</head>
+<body>
+<input id="adress" type="text" placeholder="enter adress">
+<button id="change-map-btn">change map</button>
+<div id="map"></div>
+<h1>Map</h1>
+
+<!--brings in mapbox library (Lin)k-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+<script src ='js/keys.js'></script>
+<!--added mapbox geocode from js file-->
+<script src ='js/mapbox-geocode-utils.js'></script>
+
+<script>
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+//first example
+    // var map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //     center: [-100.5, 40], // starting position [lng, lat]
+    //     // center: [-98.491142,29.424349]// starting position [lng, lat]
+    //     zoom: 5 // starting zoom
+    // });
+
+    // Zoom to the zoom level 5 without an animated transition
+    // map.setZoom(10);
+
+    //second example
+    // var map = new mapboxgl.Map({
+    //     container: 'map',
+    //     style: 'mapbox://styles/mapbox/streets-v9',
+    //     zoom: 10,
+    //     center: [-98.4916, 29.4252]
+    // });
+    //
+    // //adding a marker
+    // var marker = new mapboxgl.Marker()
+    //     .setLngLat([-98.4916, 29.4260])
+    //     .addTo(map);
+    //
+    //
+    // //adddin a popup
+    // var popup = new mapboxgl.Popup()
+    //     .setLngLat([-98.489615, 29.426827])
+    //     .setHTML("<p>Codeup Rocks!</p>")
+    //     .addTo(map)
+
+
+//justin tried to add evnets , too much of a rabbit hole
+    // marker.on('click',function(){
+    //     alert('clicked on marker');
+    // });
+
+// geocode example exercise lesson
+
+    // the  geocode method from mapbox-geocoder-utils.js
+
+    //
+    // mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    // var map = new mapboxgl.Map({
+    //     container: 'map',
+    //     style: 'mapbox://styles/mapbox/streets-v9',
+    //     zoom: 10,
+    //     center: [-98.4916, 29.4252]
+    // });
+
+    //geocode finsinf address inside of token , then runs function to center map and change zoom level.
+//     geocode("600 Navarro St #350, San Antonio, TX 78205", MAPBOX_API_TOKEN).then(function(result) {
+//         console.log(result);
+//         map.setCenter(result);
+//         map.setZoom(20);
+//     });
+// document.querySelector('#change-map-btn').addEventListener(('click',function(){
+//    var adress = document.querySelector('#addrress').value;
+//    geocode(address,MAPBOX_API_TOKEN)
+//         .then(function(result){
+//             map.setCenter(result)
+//         })
+//     }))
+
+    //reeverse gecode function lecture and note examples
+
+
+    var accessToken = MAPBOX_API_TOKEN;
+    mapboxgl.accessToken = accessToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-98.4916, 29.4252]
+    });
+    // reverse geocode method from mapbox-geocoder-utils.js
+    reverseGeocode({lng: -98.4861, lat: 29.4260}, accessToken).then(function(results) {
+        // logs the address for The Alamo
+        console.log(results);
+    });
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

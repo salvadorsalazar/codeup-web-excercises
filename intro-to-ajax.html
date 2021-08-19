@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+<script>
+    // $.ajax("/data/murals.json").done(function(data){
+    //     console.log(data);
+    //
+    //     var names = "";
+    //     data.forEach(function (order) {
+    //
+    //         names += "<tr>";
+    //         names += "<th>" + order.title + "</th>";
+    //         names += "<th>" + order.quantity + "</th>";
+    //         names += "<th>" + order.price + "</th>";
+    //         names += "<th>" + order.categories + "</th>";
+    //         names += "</tr>";
+    //     });
+    //     $('#insertProducts').html(names);
+    // });
+    //
+    // }
+    //
+    // $('#update').click(function () {
+    //     newUpdate()
+    // });
+    (function () {
+        "use strict";
+        // TODO: Create an ajax GET request for /data/inventory.json
+        // $.ajax({
+        //     url: "/data/inventory.json",
+        //     type: "GET"
+        // })
+        // TODO: Take the data from inventory.json and append it to the products table
+
+        function newUpdate() {
+            $.get("data/inventory.json").done(function (data) {
+                console.log(data);
+                var names = "";
+                data.forEach(function (order) {
+
+                    names += "<tr>";
+                    names += "<th>" + order.title + "</th>";
+                    names += "<th>" + order.quantity + "</th>";
+                    names += "<th>" + order.price + "</th>";
+                    names += "<th>" + order.categories + "</th>";
+                    names += "</tr>";
+                });
+                $('#insertProducts').html(names);
+            });
+
+        }
+
+        $('#update').click(function () {
+            newUpdate()
+        });
+
+
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements
+    })();
+
+
+
+
+
+
+
+
+    //
+    // });
+
+    // console.log('this code is after the ajax request')
+</script>
+
+
+
+</body>
+</html>

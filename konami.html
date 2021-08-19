@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+
+
+<h1>Konami Code</h1>
+
+<script>
+    "use strict";
+    $(document).keyup(function(event){
+                console.log(event.keyCode);
+                if(event.keycode ===(38,38,40,40,37,39,37,39,5,65)){
+                    alert('you have added 30 lives!')
+                }
+    });
+</script>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+</body>
+</html>

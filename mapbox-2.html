@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map Box 2</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map{
+            width:800px;
+            height : 600px;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<h1>Map<span id="coordinates"></span></h1>
+
+<!--brings in mapbox library (Lin)k-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+<script src ='js/keys.js'></script>
+    <script>
+
+        mapboxgl.accessToken = MAPBOX_API_TOKEN;
+
+        //washing dc with a marker on the lincoln memeorial
+        //add apaoput to the lincol memorial that contains the text :"Lincoln Memorial"
+        //second example
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 10,
+            center: [-77.0364, 38.8951]
+        });
+
+        //adding a marker
+        // var marker = new mapboxgl.Marker()
+        //
+        //     .setLngLat([-77.050636, 38.889248])
+        //     .addTo(map);
+
+var memorialPopup = new mapboxgl.Popup()
+        .setHtml('<h1>Lincoln Meoerial</h1>');
+
+        //adddin a popup
+        var memorialMarker = new mapboxgl.Marker({draggable: true})
+            .setLngLat([-77.050636, 38.889248])
+            // .setHTML("<p>Lincoln Memorial</p>")
+            .setPopup(memorialPopup)
+            .addTo(map);
+
+memorialMarker.on('dragend',function(){
+    document.querySelector('#coordinates').innerHtml = ;
+
+    memorialPopup
+})
+
+
+    </script>
+
+
+</body>
+</html>

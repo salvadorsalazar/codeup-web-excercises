@@ -31,11 +31,16 @@
 
         detonationTimer--;
     },1000); //added 1 second to timer
+//function update timer
+//     setInterval(updateTimer,1000);
+    //change to :down below.
+//   var countdown = setinterval(updateTimer,1000)
+
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-
+        // clearInterval(countdown);
         //added clearInterval using var set to setInterval function
         clearInterval(detonationDefuser)
 
@@ -52,3 +57,6 @@
 </script>
 </body>
 </html>
+
+
+

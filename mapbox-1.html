@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mapbox-1</title>
+
+
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+
+
+    <style>
+        #map{
+            align-content: center;
+            width:800px;
+            height : 600px;
+        }
+
+        /*div{*/
+        /*    align-content: center;*/
+        /*}*/
+    </style>
+
+
+
+</head>
+<body>
+<h1>MapBox - 1 </h1>
+<div id="map"></div>
+
+
+<!--brings in mapbox library (Lin)k-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+<script src ='js/keys.js'></script>
+<script>
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.491142,29.424349],// starting position [lng, lat]
+         zoom: 10 // starting zoom
+    });
+
+//    justins solution
+setTimeout(function(){
+
+    map.setZoom(3);
+    map.setStyle('mapbox://styles/mapbox/satellite-v9');
+    map.setCenter([-100.9431,20.6047]);
+},5000);
+
+    // var delay=5000;
+    // var timeOut = setTimeout(function(){
+    //     mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    //
+    //     var map = new mapboxgl.Map({
+    //         container: 'map', // container ID
+    //         style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //         center: [-95.7128906,37.0902405],// starting position [lng, lat]
+    //         // [-95.7128906,37.0902405]
+    //         zoom:  // starting zoom
+    //     });
+    //
+    // },delay);
+    // Zoom to the zoom level 5 without an animated transition
+    // map.setZoom(10);
+
+
+</script>
+
+
+
+</body>
+</html>
