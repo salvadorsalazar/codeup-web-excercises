@@ -77,7 +77,7 @@
 
         //geocode finsinf address inside of token , then runs function to center map and change zoom level.
         geocode("6757 Poss Rd, San Antonio, TX 78238", MAPBOX_API_TOKEN).then(function(result) {
-                console.log(result);
+                // console.log(result);
                 map.setCenter(result);
                 // map.setStyle( 'mapbox://styles/mapbox/navigation-night-v1');
                 map.setZoom(17);
@@ -93,6 +93,48 @@
 
 
 
+
+        var restaurantPlaces = [
+            {
+                name:'chachos',
+                addrress:'6757 Poss Rd, San Antonio, TX 78238',
+                message:'Mexican Food!'
+            },
+
+            {
+                name:"Nichas" ,
+                addrress:'5059 Northwest Loop 410, San Antonio, TX 78229',
+                message:'Comida Mexicana!'
+            },
+
+            {
+                name:'Perrys Stteakhouse & Grill',
+                addrress:'15900 La Cantera Pkwy #22200, San Antonio, TX 78256',
+                message:'Mexican Food!'
+            }
+
+        ];
+
+    for(var i=0;i<restaurantPlaces.length;i++){
+
+
+        console.log(restaurantPlaces[i]);
+    }
+
+    //for loop iteration
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function(coordinates) {
+            var popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+            popup.addTo(map);
+        });
+    }
+
+    placeMarkerAndPopup(restaurantPlaces, accessToken, map);
 
 
 
