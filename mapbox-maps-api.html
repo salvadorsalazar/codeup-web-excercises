@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapBox maps Api Exercise</title>
+
+
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map{
+            width:800px;
+            height : 600px;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div id="map"></div>
+<h1>Map<span id="coordinates"></span></h1>
+
+<!--brings in mapbox library (Lin)k-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+<script src ='js/keys.js'></script>
+<!--added mapbox geocode from js file-->
+<script src ='js/mapbox-geocode-utils.js'></script>
+
+<script>
+
+    var accessToken = MAPBOX_API_TOKEN;
+
+
+
+
+
+    // mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    // var map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //     center: [-77.0502, 38.8893], // starting position [lng, lat]
+    //     zoom: 10 // starting zoom
+    // });
+    // var memorialPopup = new mapboxgl.Popup()
+    //     .setHTML('<h1>Lincoln Memorial</h1>');
+    //
+    // var memorialMarker = new mapboxgl.Marker({draggable: true})
+    //     .setLngLat([-77.0502, 38.8893])
+    //     .setPopup(memorialPopup)
+    //     .addTo(map);
+
+    // memorialMarker.on('dragend', function() {
+    //     var markerCoordinates = memorialMarker.getLngLat();
+    //     // document.querySelector('#coordinates').innerHTML = markerCoordinates.lng;
+    //     memorialPopup.setHTML(markerCoordinates.lng);
+    // });
+    //
+
+
+      //  my work so far
+    // ----------------------------
+        mapboxgl.accessToken = accessToken;
+        //defaut map of san antonio
+        var map = new mapboxgl.Map({
+            container: 'map',
+            // style: 'mapbox://styles/mapbox/streets-v9',
+            style: 'mapbox://styles/mapbox/outdoors-v11',
+            //style: 'mapbox://styles/mapbox/navigation-night-v1',
+            //style: 'mapbox://styles/mapbox/navigation-night-v1',
+            zoom: 10,
+            center: [-98.4916, 29.4252]
+        });
+
+    //timeout functionality if needed to test
+    // setTimeout(function(){
+
+
+        //geocode finsinf address inside of token , then runs function to center map and change zoom level.
+        geocode("6757 Poss Rd, San Antonio, TX 78238", MAPBOX_API_TOKEN).then(function(result) {
+                console.log(result);
+                map.setCenter(result);
+                // map.setStyle( 'mapbox://styles/mapbox/navigation-night-v1');
+                map.setZoom(17);
+            });
+
+        var chachoslPopup = new mapboxgl.Popup()
+            .setHTML('<h1>Chachos</h1>');
+
+        var ChachosMarker = new mapboxgl.Marker()
+            .setLngLat([-98.62079667320049, 29.49592006943619])
+            .setPopup(chachoslPopup)
+            .addTo(map);
+
+
+
+
+
+
+    // reverse geocode method from mapbox-geocoder-utils.js
+        // reverseGeocode({lng: -157.8060, lat: 21.2620}, MAPBOX_API_TOKEN).then(function(results) {
+        //         // logs the address for The Alamo
+        //         console.log(results);
+        //     });
+
+    //timeout functionality if needed to test
+    // },5000);
+
+
+    //-----------------------
+    /// my work so far
+
+
+</script>
+
+
+
+</body>
+</html>
