@@ -22,6 +22,13 @@
 
 <!--brings in mapbox library (Lin)k-->
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+
+
+<!--&lt;!&ndash; the required script for Mapbox &ndash;&gt;-->
+<!--<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>-->
+
+
+
 <script src ='js/keys.js'></script>
 <!--added mapbox geocode from js file-->
 <script src ='js/mapbox-geocode-utils.js'></script>
@@ -34,40 +41,18 @@
 
 
 
-    // mapboxgl.accessToken = MAPBOX_API_TOKEN;
-    // var map = new mapboxgl.Map({
-    //     container: 'map', // container ID
-    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
-    //     center: [-77.0502, 38.8893], // starting position [lng, lat]
-    //     zoom: 10 // starting zoom
-    // });
-    // var memorialPopup = new mapboxgl.Popup()
-    //     .setHTML('<h1>Lincoln Memorial</h1>');
-    //
-    // var memorialMarker = new mapboxgl.Marker({draggable: true})
-    //     .setLngLat([-77.0502, 38.8893])
-    //     .setPopup(memorialPopup)
-    //     .addTo(map);
-
-    // memorialMarker.on('dragend', function() {
-    //     var markerCoordinates = memorialMarker.getLngLat();
-    //     // document.querySelector('#coordinates').innerHTML = markerCoordinates.lng;
-    //     memorialPopup.setHTML(markerCoordinates.lng);
-    // });
-    //
-
 
       //  my work so far
     // ----------------------------
         mapboxgl.accessToken = accessToken;
         //defaut map of san antonio
-        var map = new mapboxgl.Map({
+        var map2 = new mapboxgl.Map({
             container: 'map',
             // style: 'mapbox://styles/mapbox/streets-v9',
             style: 'mapbox://styles/mapbox/outdoors-v11',
             //style: 'mapbox://styles/mapbox/navigation-night-v1',
             //style: 'mapbox://styles/mapbox/navigation-night-v1',
-            zoom: 10,
+            zoom: 9.5,
             center: [-98.4916, 29.4252]
         });
 
@@ -75,66 +60,179 @@
     // setTimeout(function(){
 
 
-        //geocode finsinf address inside of token , then runs function to center map and change zoom level.
-        geocode("6757 Poss Rd, San Antonio, TX 78238", MAPBOX_API_TOKEN).then(function(result) {
-                // console.log(result);
-                map.setCenter(result);
-                // map.setStyle( 'mapbox://styles/mapbox/navigation-night-v1');
-                map.setZoom(17);
-            });
 
-        var chachoslPopup = new mapboxgl.Popup()
-            .setHTML('<h1>Chachos</h1>');
-
-        var ChachosMarker = new mapboxgl.Marker()
-            .setLngLat([-98.62079667320049, 29.49592006943619])
-            .setPopup(chachoslPopup)
-            .addTo(map);
+        //geocode info to create map from coOrdinates
+        //------------------------------------
+        // geocode("6757 Poss Rd, San Antonio, TX 78238", MAPBOX_API_TOKEN).then(function(result) {
+        //         // console.log(result);
+        //         map.setCenter(result);
+        //         // map.setStyle( 'mapbox://styles/mapbox/navigation-night-v1');
+        //         map.setZoom(17);
+        //     });
+        //-----------------------------
+        //geocode info to create map from coOrdinates
 
 
+    //create pin popup
+        //----------------
+    // var chachoslPopup = new mapboxgl.Popup()
+    //         .setHTML('<h1>Chachos</h1>');
+        //---------------
+        //create pin popup
 
 
+    //create marker on map(with/without popup
+    //-------------------------
+    // var ChachosMarker = new mapboxgl.Marker()
+    //         .setLngLat([-98.62079667320049, 29.49592006943619])
+    //         .setPopup(chachoslPopup)
+    //         .addTo(map);
+    //    ----------------------------
+    //create marker on map(with/without popup
+
+
+
+        //array of restaurants
+        //-------------------
         var restaurantPlaces = [
             {
                 name:'chachos',
-                addrress:'6757 Poss Rd, San Antonio, TX 78238',
-                message:'Mexican Food!'
+                address:'6757 Poss Rd, San Antonio, TX 78238',
+                message:'Mexican Food!',
+                type:'11111'
             },
 
             {
                 name:"Nichas" ,
-                addrress:'5059 Northwest Loop 410, San Antonio, TX 78229',
-                message:'Comida Mexicana!'
+                address:'5059 Northwest Loop 410, San Antonio, TX 78229',
+                message:'Comida Mexicana!',
+                type:'22222'
             },
 
             {
                 name:'Perrys Stteakhouse & Grill',
-                addrress:'15900 La Cantera Pkwy #22200, San Antonio, TX 78256',
-                message:'Mexican Food!'
+                address:'15900 La Cantera Pkwy #22200, San Antonio, TX 78256',
+                message:'Porckchops an dsteaks and good drinks!',
+                type:'333333'
+            },
+            {
+
+                name:'jack in the box',
+                address:'8731 hunters creek,san antonio,tx,78211',
+                message: 'jack in the crack shit ass food',
+                type:'44444444'
             }
 
         ];
+        //-------------------------
+        //array of restaurants
 
+
+    // verify that looping of array is working
     for(var i=0;i<restaurantPlaces.length;i++){
-
-
         console.log(restaurantPlaces[i]);
     }
+    // verify that looping of array is working
 
-    //for loop iteration
-    function placeMarkerAndPopup(info, token, map) {
-        geocode(info.address, token).then(function(coordinates) {
-            var popup = new mapboxgl.Popup()
-                .setHTML(info.popupHTML);
-            var marker = new mapboxgl.Marker()
-                .setLngLat(coordinates)
-                .addTo(map)
-                .setPopup(popup);
-            popup.addTo(map);
+
+
+
+
+
+
+    // a function to place all markers on a map
+    //1st argument has to be name of array object,2nd can be named anything
+    function makeAllPins(restaurantPlaces, y) {
+        restaurantPlaces.forEach(function(x) {//argument can be named anything
+            makePins(x, y);//1st argument has to match above function,then match 2nd argument from top(main)function
         });
     }
 
-    placeMarkerAndPopup(restaurantPlaces, accessToken, map);
+    // a function to place an individual popup and marker on a map
+    //parameters can be named anything and it'll still work - (restaurantObject, map)as long as they are named the same
+    function makePins(restaurantObject2, xmap) {
+        geocode(restaurantObject2.address, MAPBOX_API_TOKEN).then(function(anyname) {
+            var popup2 = new mapboxgl.Popup()//**var can be named anything as well
+                .setHTML('<h3>' + restaurantObject2.name + '</h3>'+
+                    '<p>' + restaurantObject2.message + '</p>'+
+                    '<p>'+ restaurantObject2.type +'</p>'
+
+                );
+
+        // .setHTML('<h3>' + restaurantObject2.name + '</h3><p>' + restaurantObject2.message + '</p>');
+            new mapboxgl.Marker()
+                .setLngLat(anyname)
+                .setPopup(popup2)//argument has to match var name from above **
+                .addTo(xmap);
+        });
+    }
+
+
+    // Place markers on the map
+    makeAllPins(restaurantPlaces, map2);
+    //1st argument accepts the array name(object)
+    //2nd argument has to match var name of created map
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // eercise example
+    //------------------
+
+    // //for loop iteration
+    // function placeMarkerAndPopup(info, token, map) {
+    //     geocode(info.address, token).then(function(coordinates) {
+    //         var popup = new mapboxgl.Popup()
+    //             .setHTML(info.popupHTML);
+    //         var marker = new mapboxgl.Marker()
+    //             .setLngLat(coordinates)
+    //             .addTo(map)
+    //             .setPopup(popup);
+    //         popup.addTo(map);
+    //     });
+    // }
+    //
+    // placeMarkerAndPopup(restaurantPlaces, accessToken, map);
+    //
+    //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

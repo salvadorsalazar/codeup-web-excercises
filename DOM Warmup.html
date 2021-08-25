@@ -34,21 +34,19 @@
   <input type="text" id="wordToDisplay">
   <button id="displayWord">Display in DOM</button>
   <p id="word"></p>
+
+
+
+
+
 </section>
 <section>
   <button id="create-an-element">Create an Element</button>
 </section>
-
-
-
 <!--<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>-->
-
-
 <script>
-
-
- $('section button').hover(function(e){
-           $(e.target).css('background-color','hotpink');
+ $('section button').hover(function(){
+           // $(e.target).css('background-color','hotpink');
 
            var number = $(this).attr('data-number');
            $('#message').html(number);

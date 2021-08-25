@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src ='js/keys.js'></script>
+<script>
+
+
+    //convert api date/time response to js date oject
+    //....new Date(1629461117 * 1000)
+$.get('https://api.openweathermap.org/data/2.5/onecall',{
+    appid:WEATHER_API_TOKEN,
+    lat:29.4252,
+    lon: -98.4916,
+        units:'imperial',
+    exclude:'minutely,hourly'
+
+
+    }).done(function(data) {
+    console.log(data);
+    // console.log(data.current.clouds);
+    // console.log(data.current.humidity);
+    // console.log(data.current.temp);
+    console.log(data.daily[0].humidity);
+
+data.daily.forEach(function(day){
+    console.log(day.humidity);
+})
+
+
+
+
+
+
+
+}).fail(function(error){
+    console.log(error);
+});
+
+
+
+</script>
+
+</body>
+</html>

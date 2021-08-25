@@ -25,24 +25,24 @@
 (function() {
     "use strict";
     // TODO: Create an AJAX GET request for the file under data/inventory.json
-    $.get("/data/inventory.json").done(function(data){
-        console.log(data);
-        console.log(data[0].title);
-
-
-
-    });
+    // $.get("/data/inventory.json").done(function(data){
+    //     console.log(data);
+    //     console.log(data[0].title);
+    //
+    //
+    //
+    // });
 
 
     $.get("/data/inventory.json").done(function(data){
         // console.log(data);
 
-        data.forEach(function(tool) {
+        data.forEach(function(tool2) {
             $('#insertProducts').append('<tr>' +
-                '<td>' + tool.title + '</td>' +
-                '<td>' + tool.quantity + '</td>' +
-                '<td>' + tool.price + '</td>' +
-                '<td>' + tool.categories.join(' , ') + '</td>' +
+                '<td>' + tool2.title + '</td>' +
+                '<td>' + tool2.quantity + '</td>' +
+                '<td>' + tool2.price + '</td>' +
+                '<td>' + tool2.categories.join(' , ') + '</td>' +
                 '</tr>')
         });
     });
